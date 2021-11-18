@@ -1,4 +1,4 @@
-package br.org.generation.DriBlog.model;
+package br.org.generation.BlogPessoal.model;
 
 
 
@@ -17,6 +17,8 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.annotations.ApiModelProperty;
+
 
 @Entity
 @Table(name = "tb_usuario")
@@ -24,13 +26,14 @@ public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long idUsuario;
 
 	@NotBlank
 	@Size(min = 2, max = 100)
 	private String nome;
-
-	@NotBlank
+	
+	@ApiModelProperty(example = "email@email.com.br")
+	@NotBlank(message = "O atributo usuário é obrigatório!")
 	@Email(message = "O formato do usuário é e-mail.")
 	private String usuario;
 
@@ -42,9 +45,9 @@ public class Usuario {
 	@JsonIgnoreProperties ("usuario")
 	private List<ModelPostagem> postagem;
 	
-	public Usuario(long id, String nome, String usuario, String senha) {
+	public Usuario(long idUsuario, String nome, String usuario, String senha) {
 		
-		this.id = id;
+		this.idUsuario = idUsuario;
 		this.nome = nome;
 		this.usuario = usuario;
 		this.senha = senha;
@@ -54,12 +57,13 @@ public class Usuario {
 		
 	}		
 	
-	public long getId() {
-		return id;
+
+	public long getIdUsuario() {
+		return idUsuario;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setIdUsuario(long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
 	public String getNome() {

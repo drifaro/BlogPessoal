@@ -1,4 +1,4 @@
-package br.org.generation.DriBlog.seguranca;
+package br.org.generation.BlogPessoal.seguranca;
 
 import java.util.Optional;
 
@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.org.generation.DriBlog.model.Usuario;
-import br.org.generation.DriBlog.repository.UsuarioRepository;
+import br.org.generation.BlogPessoal.model.Usuario;
+import br.org.generation.BlogPessoal.repository.UsuarioRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

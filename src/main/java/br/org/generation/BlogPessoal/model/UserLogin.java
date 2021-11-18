@@ -1,7 +1,7 @@
 /*Ela serve de apoio no processo de recebimento de dados da API, mas ela não vai
 armazenar nada no banco de dados (por isso que ela não tem anotação)*/
 
-package br.org.generation.DriBlog.model;
+package br.org.generation.BlogPessoal.model;
 
 public class UserLogin {
 	

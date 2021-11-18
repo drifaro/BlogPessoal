@@ -1,4 +1,4 @@
-package br.org.generation.DriBlog.controller;
+package br.org.generation.BlogPessoal.controller;
 
 import java.util.List;
 
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.org.generation.DriBlog.model.ModelTema;
-import br.org.generation.DriBlog.repository.RepositoryTema;
+import br.org.generation.BlogPessoal.model.ModelTema;
+import br.org.generation.BlogPessoal.repository.RepositoryTema;
 
 @RestController
 @RequestMapping("/tema")
@@ -34,8 +34,8 @@ public class ControllerTema {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<ModelTema> gteById(@PathVariable long id) {
-		return repositoryTema.findById(id).map(resp -> ResponseEntity.ok(resp))
+	public ResponseEntity<ModelTema> gteByIdTema(@PathVariable long idTema) {
+		return repositoryTema.findById(idTema).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
 
@@ -51,7 +51,7 @@ public class ControllerTema {
 
 	@PutMapping
 	public ResponseEntity<ModelTema> putTema(@Valid @RequestBody ModelTema tema) {
-		return repositoryTema.findById(tema.getId())
+		return repositoryTema.findById(tema.getIdTema())
 				.map(resp -> ResponseEntity.ok().body(repositoryTema.save(tema)))
 				.orElse(ResponseEntity.notFound().build());
 

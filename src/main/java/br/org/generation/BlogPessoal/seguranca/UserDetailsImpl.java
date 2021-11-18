@@ -1,4 +1,4 @@
-package br.org.generation.DriBlog.seguranca;
+package br.org.generation.BlogPessoal.seguranca;
 
 import java.util.Collection;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import br.org.generation.DriBlog.model.Usuario;
+import br.org.generation.BlogPessoal.model.Usuario;
 
 public class UserDetailsImpl implements UserDetails {
 

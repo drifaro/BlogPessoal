@@ -1,4 +1,4 @@
-package br.org.generation.DriBlog.controller;
+package br.org.generation.BlogPessoal.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.org.generation.DriBlog.model.UserLogin;
-import br.org.generation.DriBlog.model.Usuario;
-import br.org.generation.DriBlog.repository.UsuarioRepository;
-import br.org.generation.DriBlog.service.UsuarioService;
+import br.org.generation.BlogPessoal.model.UserLogin;
+import br.org.generation.BlogPessoal.model.Usuario;
+import br.org.generation.BlogPessoal.repository.UsuarioRepository;
+import br.org.generation.BlogPessoal.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuarios")

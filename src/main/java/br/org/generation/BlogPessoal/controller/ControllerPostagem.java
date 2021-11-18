@@ -1,4 +1,4 @@
-package br.org.generation.DriBlog.controller;
+package br.org.generation.BlogPessoal.controller;
 
 import java.util.List;
 
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.org.generation.DriBlog.model.ModelPostagem;
-import br.org.generation.DriBlog.repository.RepositoryPostagem;
+import br.org.generation.BlogPessoal.model.ModelPostagem;
+import br.org.generation.BlogPessoal.repository.RepositoryPostagem;
 
 @RestController
 @RequestMapping("/postagens")
@@ -53,7 +53,7 @@ public class ControllerPostagem {
 
 	@PutMapping
 	public ResponseEntity<ModelPostagem> putPostagem(@Valid @RequestBody ModelPostagem postagem ) {
-		return repositoryPostagem.findById(postagem.getId())
+		return repositoryPostagem.findById(postagem.getIdPost())
 				.map(resp -> ResponseEntity.ok().body(repositoryPostagem.save(postagem)))
 				.orElse(ResponseEntity.notFound().build());
 

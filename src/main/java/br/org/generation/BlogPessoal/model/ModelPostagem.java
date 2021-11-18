@@ -1,4 +1,4 @@
-package br.org.generation.DriBlog.model;
+package br.org.generation.BlogPessoal.model;
 
 import java.util.Date;
 
@@ -23,7 +23,7 @@ public class ModelPostagem {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long idPost;
 
 	@NotNull(message = "Obrigatório preenchimento do campo.")
 	@Size(min = 5, max = 100)
@@ -44,12 +44,14 @@ public class ModelPostagem {
 	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
 	
-	public long getId() {
-		return id;
+	
+
+	public long getIdPost() {
+		return idPost;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setIdPost(long idPost) {
+		this.idPost = idPost;
 	}
 
 	public String getTitulo() {

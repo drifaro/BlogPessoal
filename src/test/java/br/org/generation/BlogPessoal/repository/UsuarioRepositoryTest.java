@@ -1,4 +1,4 @@
-package br.org.generation.DriBlog.repository;
+package br.org.generation.BlogPessoal.repository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -14,7 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
-import br.org.generation.DriBlog.model.Usuario;
+import br.org.generation.BlogPessoal.model.Usuario;
+import br.org.generation.BlogPessoal.repository.UsuarioRepository;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)

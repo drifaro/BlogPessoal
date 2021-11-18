@@ -1,4 +1,4 @@
-package br.org.generation.DriBlog.model;
+package br.org.generation.BlogPessoal.model;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class ModelTema {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long idTema;
 
 	@NotNull
 	private String descricao;
@@ -29,12 +29,13 @@ public class ModelTema {
 	@JsonIgnoreProperties("tema")
 	private List<ModelPostagem> postagem;
 
-	public long getId() {
-		return id;
+
+	public long getIdTema() {
+		return idTema;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setIdTema(long idTema) {
+		this.idTema = idTema;
 	}
 
 	public String getDescricao() {

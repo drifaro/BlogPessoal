@@ -1,4 +1,4 @@
-package br.org.generation.DriBlog.controller;
+package br.org.generation.BlogPessoal.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,8 +19,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import br.org.generation.DriBlog.model.Usuario;
-import br.org.generation.DriBlog.service.UsuarioService;
+import br.org.generation.BlogPessoal.model.Usuario;
+import br.org.generation.BlogPessoal.service.UsuarioService;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -74,7 +74,7 @@ public class UsuarioControllerTest {
 		Optional<Usuario> usuarioCreate = usuarioService.cadastrarUsuario(new Usuario(0L, 
 			"Juliana Andrews", "juliana_andrews@email.com.br", "juliana123"));
 
-		Usuario usuarioUpdate = new Usuario(usuarioCreate.get().getId(), 
+		Usuario usuarioUpdate = new Usuario(usuarioCreate.get().getIdUsuario(), 
 			"Juliana Andrews Ramos", "juliana_ramos@email.com.br", "juliana123");
 		
 		HttpEntity<Usuario> requisicao = new HttpEntity<Usuario>(usuarioUpdate);

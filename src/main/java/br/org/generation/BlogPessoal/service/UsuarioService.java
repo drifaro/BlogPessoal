@@ -1,4 +1,4 @@
-package br.org.generation.DriBlog.service;
+package br.org.generation.BlogPessoal.service;
 
 import java.nio.charset.Charset;
 import java.util.Optional;
@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import br.org.generation.DriBlog.model.UserLogin;
-import br.org.generation.DriBlog.model.Usuario;
-import br.org.generation.DriBlog.repository.UsuarioRepository;
+import br.org.generation.BlogPessoal.model.UserLogin;
+import br.org.generation.BlogPessoal.model.Usuario;
+import br.org.generation.BlogPessoal.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
@@ -45,13 +45,13 @@ public class UsuarioService {
 
 	public Optional<Usuario> atualizarUsuario(Usuario usuario) {
 
-		if (repository.findById(usuario.getId()).isPresent()) {
+		if (repository.findById(usuario.getIdUsuario()).isPresent()) {
 
 			Optional<Usuario> buscaUsuario = repository.findByUsuario(usuario.getUsuario());
 
 			if (buscaUsuario.isPresent()) {
 
-				if (buscaUsuario.get().getId() != usuario.getId())
+				if (buscaUsuario.get().getIdUsuario() != usuario.getIdUsuario())
 					return Optional.empty();
 			}
 			usuario.setSenha(criptografarSenha(usuario.getSenha()));
@@ -69,7 +69,7 @@ public class UsuarioService {
 			if (compararSenhas(userLogin.get().getSenha(), usuario.get().getSenha())) {
 
 				String token = gerarBasicToken(userLogin.get().getUsuario(), userLogin.get().getSenha());
-				userLogin.get().setId(usuario.get().getId());
+				userLogin.get().setId(usuario.get().getIdUsuario());
 				userLogin.get().setNome(usuario.get().getNome());
 				userLogin.get().setSenha(usuario.get().getSenha());
 				userLogin.get().setToken(token);
