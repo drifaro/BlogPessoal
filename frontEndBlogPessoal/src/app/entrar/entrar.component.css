@@ -1,0 +1,19 @@
+#img-bg{
+    background-image: url('https://i.imgur.com/TPwU1JS.png');
+
+    min-height: 930px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto; 
+}
+
+.container-fluid{
+
+    background-color: lavender;
+
+}
+
+.ft{
+    color: darkcyan;
+}
