@@ -1,11 +1,11 @@
 #img-bg{
     background-image: url('https://i.imgur.com/mwxbhMr.png');
 
-    min-height: 930px;
-
+    min-height: 930px;    
+    
     background-repeat: no-repeat;
     background-position: center;
-    background-size: auto; 
+    background-size: 100%; 
 }
 
 .container-fluid{
