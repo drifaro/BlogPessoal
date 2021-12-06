@@ -16,11 +16,11 @@ export class AuthService {
   ) { }
 
   entrar(UserLogin: UserLogin): Observable<UserLogin>{
-    return this.http.post<UserLogin>('http://driblog.heroku.com/usuarios/logar', UserLogin) 
+    return this.http.post<UserLogin>('https://driblog.herokuapp.com/usuarios/logar', UserLogin) 
   }
 
   cadastrar(user: Usuario): Observable<Usuario>{
-    return this.http.post<Usuario>('http://driblog.heroku.com/usuarios/cadastrar', Usuario)
+    return this.http.post<Usuario>('https://driblog.herokuapp.com/usuarios/cadastrar', Usuario)
 
   }
 }
