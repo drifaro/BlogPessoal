@@ -59,8 +59,7 @@ public class Usuario {
 	
 	public Usuario() {
 		
-	}		
-	
+	}
 
 	public long getIdUsuario() {
 		return idUsuario;
@@ -94,14 +93,6 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public List<ModelPostagem> getPostagem() {
-		return postagem;
-	}
-
-	public void setPostagem(List<ModelPostagem> postagem) {
-		this.postagem = postagem;
-	}
-
 	public String getFoto() {
 		return foto;
 	}
@@ -117,6 +108,14 @@ public class Usuario {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	
+
+	public List<ModelPostagem> getPostagem() {
+		return postagem;
+	}
+
+	public void setPostagem(List<ModelPostagem> postagem) {
+		this.postagem = postagem;
+	}		
+		
 	
 }
